@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Perdón</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pedido de Perdón</h1>
+    </header>
+    <main>
+        <section>
+            <img src="https://cdn.discordapp.com/attachments/1211132703290953729/1211132796785917973/image0.gif?ex=65ed1650&is=65daa150&hm=ed39419719ebafbc9fa814c5e15d09901702d2b3a2edfb2d1e214f6f258cc5cf&" alt="Perdón Gif">
+            <p>Querida [bambi],</p>
+            <p>bonita perdón x no haberte hecho caso,se q me las mando y esta vez me la mandé muy feito,por eso te hago edta página xd,quería preguntarte si es q me podrías perdonar x lo q hice.</p>
+
+            <form action="procesar_respuesta.php" method="post">
+                <p>¿Me perdonas?</p>
+                <button type="submit" name="perdonar" value="si">Sí</button>
+                <button type="submit" name="perdonar" value="no">No</button>
+            </form>
+
+            <p>te quiero mucho mi vida.</p>
+            <p>Con cariño,</p>
+            <p>[Tu esposo xd,na mentira si sabes quien soy, soy mochi ps]</p>
+        </section>
+    </main>
+</body>
+</html>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST["perdonar"])) {
+        $respuesta = $_POST["perdonar"];
+
+        if ($respuesta == "si") {
+            echo "gracias x perdonarme 🥰🥰🥰 t amo 👉👈 ";
+        } elseif ($respuesta == "no") {
+            echo "salite y volvete a meter a la página y perdoname 😭))).";
+        }
+    }
+}
+?>
